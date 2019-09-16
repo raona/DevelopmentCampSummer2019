@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './home/home';
+import Patients from './patients/patients';
+import RespiNavbar from './navbar/respiNavbar';
+import respiNavItems from './entities/respiNavItems';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export interface AppState {
+	currentView: JSX.Element;
+}
+
+class App extends React.Component<{}, AppState> {
+	constructor() {
+		super({});
+		this.state = {
+			currentView: <Home />
+		};
+	}
+
+	handleNavbarSelect = (eventKey: string) => {
+		let view: JSX.Element | undefined = undefined;
+
+		switch (eventKey) {
+			case 'home':
+				view = <Home />;
+				break;
+
+			case 'patients':
+				view = <Patients />
+				break;
+		}
+
+		this.setState({
+			currentView: view!
+		});
+	}
+
+	public render() {
+		let { currentView } = this.state;
+
+		return (
+			<>
+				<RespiNavbar handleNavBarSelect={this.handleNavbarSelect} respiNavItems={respiNavItems} defaultActiveKey={respiNavItems[0].key}></RespiNavbar>
+				{currentView}
+			</>
+		);
+	}
 }
 
 export default App;
