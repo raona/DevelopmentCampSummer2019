@@ -1,6 +1,6 @@
 import Patient from '../entities/patient';
 
-const patients: Patient[] = [
+let patients: Patient[] = [
     {
         "Id": 11,
         "Name": "Sandra",

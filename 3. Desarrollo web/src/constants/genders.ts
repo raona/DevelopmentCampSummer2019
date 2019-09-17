@@ -1,6 +1,6 @@
 import Gender from "../entities/gender";
 
-const genders: Gender[] = [
+let genders: Gender[] = [
     {
         "Id": 1,
         "InternalId": 0,

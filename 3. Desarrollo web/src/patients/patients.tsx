@@ -34,9 +34,17 @@ export default class Patients extends React.Component<{}, PatientsState> {
         });
     }
 
-    private onModalDialogClose = () => {
+    private onModalDialogClose = (addedPatient?: Patient) => {
+        let patients = this.state.patients as Patient[];
+        if (addedPatient) {
+            let lastId = Math.max.apply(Math, patients.map(patient => { return patient.Id }));
+            addedPatient.Id = lastId + 1;
+            patients.push(addedPatient);
+        }
+
         this.setState({
-            showModal: false
+            showModal: false,
+            patients: patients
         });
     }
 
