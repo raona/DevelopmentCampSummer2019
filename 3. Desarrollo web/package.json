@@ -7,13 +7,17 @@
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
     "@types/react-bootstrap": "^0.32.19",
+    "@types/react-bootstrap-date-picker": "^4.0.6",
     "@types/react-dom": "16.9.0",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
+    "create-react-class": "^15.6.3",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
+    "react-day-picker": "^7.3.2",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
+    "ts-transformer-keys": "^0.3.5",
     "typescript": "3.6.3"
   },
   "scripts": {

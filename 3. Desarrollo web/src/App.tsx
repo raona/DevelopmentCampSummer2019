@@ -1,20 +1,17 @@
 import React from 'react';
 import Home from './home/home';
 import Patients from './patients/patients';
-import RespiNavbar from './navbar/respiNavbar';
-import respiNavItems from './entities/respiNavItems';
+import RespiNavbar from './common/navbar/respiNavbar';
+import respiNavItems from './constants/respiNavItems';
 
 export interface AppState {
 	currentView: JSX.Element;
 }
 
 class App extends React.Component<{}, AppState> {
-	constructor() {
-		super({});
-		this.state = {
-			currentView: <Home />
-		};
-	}
+	state = {
+		currentView: <Home />
+	};
 
 	handleNavbarSelect = (eventKey: string) => {
 		let view: JSX.Element | undefined = undefined;

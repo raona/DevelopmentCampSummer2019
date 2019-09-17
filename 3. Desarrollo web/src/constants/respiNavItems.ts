@@ -1,4 +1,4 @@
-import respiNavItem from "./respiNavItem";
+import respiNavItem from "../entities/respiNavItem";
 
 const respiNavItems: respiNavItem[] = [
   {

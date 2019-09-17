@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
-import respiNavItem from "../entities/respiNavItem";
+import respiNavItem from "../../entities/respiNavItem";
 
 export interface navbarItemProps {
     navbarItem: respiNavItem;
